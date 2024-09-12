@@ -6,10 +6,10 @@ const gmailSpan = document.querySelector("#gmail_result");
 const regExp = /\w@gmail.com$/
 
 gmailButton.addEventListener("click",()=>{
-   console.log(gmailInput.value)
+    console.log(gmailInput.value)
     if(regExp.test(gmailInput.value)){
         gmailSpan.innerHTMl = "написано правильно"
-        gmailSpan.style.color = "springgreen"
+        gmailSpan.style.color = "green"
     }
     else {
         gmailSpan.innerHTML = "указано неправильно"
@@ -45,7 +45,7 @@ const moveBlock = ()=>{
         requestAnimationFrame(moveBlock)
     }
 }
-
+moveBlock()
 //TIME_BLOCK
 const startCounter = document.querySelector("#start");
 const stopCounter = document.querySelector("#stop");
