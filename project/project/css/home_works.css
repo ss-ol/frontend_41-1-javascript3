@@ -191,3 +191,34 @@
     display: flex;
     justify-content: space-between;
 }
+.card {
+    width: 200px;
+    background-color: orange;
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+.person_photo{
+    width: 100%;
+    border-radius: 5px;
+}
+.character_container{
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+}
+.but_bot{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#button_bottom{
+    background-color: orange;
+    margin: 50px;
+    width: 90px;
+    height: 40px;
+    font-size: 16px;
+}
