@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+.block {
+    width: 150px;
+    height: 150px;
+    background-color: #007bff;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.block--active {
+    background-color: transparent;
+}
