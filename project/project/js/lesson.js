@@ -58,3 +58,47 @@ const autoSlaider = ()=>{
 setInterval(() => {
     autoSlaider()
 }, 3000);
+
+
+// converter
+
+const usdInput = document.querySelector("#usd");
+const somInput = document.querySelector("#som");
+const euroInput = document.querySelector("#eur");
+
+const converter = (element, targetElement , targetElement2)=>{
+    element.oninput=()=>{
+        const request = new XMLHttpRequest();
+        request.open('GET','../data/converter.json');
+        request.setRequestHeader("Content-type","application/json");
+        request.send()
+
+        request.onload=()=>{
+            const data = JSON.parse(request.response)
+            if (element.id === "som"){
+                targetElement.value = (element.value / data.usd).toFixed(2);
+                targetElement2.value = (element.value / data.eur).toFixed(2)
+            }
+            if (element.id === "usd"){
+                targetElement.value = (element.value * data.usd).toFixed(2);
+                targetElement2.value = (element.value * data.usd / data.eur).toFixed(2);
+            }
+            if (element.id === "eur"){
+                targetElement.value = (element.value * data.eur).toFixed(2);
+                targetElement2.value = (element.value / data.eur * data.usd).toFixed(2)
+            }
+            if (element.value === ''){
+                targetElement.value = ''
+                targetElement2.value = ''
+            }
+        }
+    }
+}
+
+converter(somInput,usdInput,euroInput)
+converter(usdInput,somInput,euroInput)
+converter(euroInput,somInput,usdInput)
+
+
+// DRY - DON'T REPEAT YOURSELF
+//KISS - KEEP EAT SIMPLE , STUPID
