@@ -102,3 +102,53 @@ converter(euroInput,somInput,usdInput)
 
 // DRY - DON'T REPEAT YOURSELF
 //KISS - KEEP EAT SIMPLE , STUPID
+
+
+//CARD SWITCHER
+const card = document.querySelector(".card");
+const btnPrev = document.querySelector("#btn-prev");
+const btnNext = document.querySelector("#btn-next");
+
+let cardId = 1;
+
+function displayCard() {
+    fetch(`https://jsonplaceholder.typicode.com/todos/${cardId}`)
+        .then(response => response.json())
+        .then(data => {
+            card.innerHTML = `
+            <p>${data.title}</p>
+            <p style="color: ${data.completed ? 'green' : 'red'} ">${data.completed}</p>
+            <span>${data.id}</span>
+            `;
+        });
+}
+
+displayCard();
+const slideCard = (button,buttonName)=>{
+    displayCard()
+    button.onclick=()=>{
+        switch (buttonName) {
+            case 'next':
+                if (cardId === 200){
+                    cardId = 0;
+                }
+                cardId++
+                break;
+                case 'prev':
+                    if (cardId === 1){
+                        cardId = 201;
+                    }
+                    cardId=cardId - 1;
+
+        }
+        displayCard();
+    }
+}
+slideCard(btnNext,'next');
+slideCard(btnPrev,'prev');
+
+//
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error fetching data:', error));
