@@ -71,10 +71,9 @@ function increaseCounter() {
         setTimeout(increaseCounter, 1200);
     }
 }
-
 // Persons
 
-
+document.addEventListener('DOMContentLoaded', () => {
     const charactersContainer = document.querySelector('.character_container');
     const request = new XMLHttpRequest();
     request.open('GET', '../data/persons.json');
@@ -82,31 +81,47 @@ function increaseCounter() {
     request.send();
 
     request.onload = () => {
-      const data = JSON.parse(request.response);
-      data.forEach(person => {
-          const card = document.createElement('div');
-          card.classList.add('card');
-          card.innerHTML = `
-          <h2>${person.name}</h2>
-          <img src="${person.person_photo}" alt="${person.name}" class="person_photo">
-          <p>age:${person.age}</p>
-          <p>bio:${person.bio}</p>
-          `
-          charactersContainer.appendChild(card);
+        if (request.status >= 200 && request.status < 400) {
+            console.log('Response text:', request.responseText);
+            const characters = JSON.parse(request.responseText);
 
-      })
+            characters.forEach(character => {
+                const characterBlock = document.createElement("div");
+                characterBlock.classList.add("character_block");
+
+                characterBlock.innerHTML = `
+                <div class="character_photo">
+                    <img src="${character.person_photo}" alt="${character.name}">
+                </div>
+                <h2>${character.name}</h2>
+                <p>Age: ${character.age}</p>
+                <p>Bio: ${character.bio}</p>
+                `;
+                const h2Element = characterBlock.querySelector("h2");
+                const pElements = characterBlock.querySelectorAll("p");
+
+                if (h2Element) {
+                    h2Element.style.color = "white";
+                }
+                pElements.forEach(p => {
+                    p.style.color = "white";
+                });
+                charactersContainer.append(characterBlock);
+            });
+        } else {
+            console.error("Request failed", request.status);
+        }
     };
+
+    request.onerror = () => {
+        console.error("Request fully failed");
+    };
+});
 // Data
-const button = document.getElementById("button_bottom")
-button.onclick= ()=>{
-    const request = new XMLHttpRequest()
-    request.open("GET","../data/data.json")
-    request.setRequestHeader("Content-type","application/json")
-    request.send()
-    request.onload=()=> {
-        const data = JSON.parse(request.response)
-        data.forEach(element=>{
-            console.log(element)
-        })
-    }
+const request = new XMLHttpRequest()
+request.open("GET","data.hw4.json")
+request.setRequestHeader("Content-type","application/json")
+request.send()
+request.onload=()=> {
+    console.log(request.response)
 }

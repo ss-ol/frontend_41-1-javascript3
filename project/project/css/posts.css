@@ -1,0 +1,40 @@
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+header,footer{
+    background-color : orange;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    background-color: black;
+}
+.card{
+    border-radius: 5px;
+    border: 1px solid orange;
+    width: 300px;
+    margin: 10px;
+    padding: 15px;
+    box-shadow:0 0 10px rgb(213,132,20) ;
+}
+.card img{
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+}
+.card h3{
+    font-size: 18px;
+    margin: 10px 0 ;
+}
+.card p{
+    font-size: 14px;
+    color: white;
+
+}
