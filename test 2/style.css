@@ -1,0 +1,27 @@
+/*4*/
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.5s ease;
+}
+.color-button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    background-color: lightslategrey;
+}
+/*5*/
+.block {
+    width: 350px;
+    height: 350px;
+    background-color: lightgreen;
+    transition: max-height 0.5s ease;
+    margin-bottom: 15px;
+}
+.hidden {
+    max-height: 0;
+    overflow: hidden;
+}
