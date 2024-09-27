@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Everest",
+    "person_photo": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQoUAvnbqYNeHXDD3Le_xsP2FF3eImalNuKAnKZt_72QcRmbBSUix1_kuXTROu2xufG1TqNnbv76kTa0ZBL7Zvyj2BW3AQTU8mnD0Wmww",
+    "bio": "Mount Everest is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. The China–Nepal border runs across its summit point. Its elevation of 8,848.86 m was most recently established in 2020 by the Chinese and Nepali authorities."
+  },
+  {
+    "name": "Kilimanjaro",
+    "person_photo": "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcSlUrFZ9Mv9yjtwb3hCpycQj-F5k4xLmc1JEXg6ggYPM1ix9yg9dj4VQRopHDX2vnnhuAb09jWwxpHhzjuoD_7n8WMAKYg68hLzF1j3IQ",
+    "bio": "Mount Kilimanjaro is a dormant volcano in Tanzania. With three volcanic cones — Kibo, Mawenzi and Shira — it is the highest mountain in Africa and the highest single free-standing mountain above sea level in the world: 5,89"
+  },
+  {
+    "name": " Elbrus",
+    "person_photo": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcRiDnN_Q27VeEJ2k-6rNG5wdXmlxCtz0c1sU_2OAFTvjgU1UkWPxD5aQirTiUvy67Ex7OE8kZFiicIOsdPoxuospGTj46MmMbCu_Hp4tg",
+    "bio": "Mount Elbrus is the highest mountain in Russia and Europe. It is a dormant volcano rising 5,642 m above sea level, and is the highest stratovolcano in the supercontinent of Eurasia, as well as the tenth-most prominent peak in the world."
+  }
+]
